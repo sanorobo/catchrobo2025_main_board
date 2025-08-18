@@ -15,6 +15,8 @@ extern UART_HandleTypeDef huart6;
 extern FDCAN_HandleTypeDef hfdcan1;
 extern FDCAN_HandleTypeDef hfdcan2;
 
+__attribute__((section(".ram_d2"))) static uint8_t ram_d2[4096];
+
 extern "C" void main_thread(void *) {
   using namespace halx::peripheral;
   using namespace halx::driver;

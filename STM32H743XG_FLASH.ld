@@ -209,7 +209,7 @@ SECTIONS
 
   .ram_d2 :
   {
-    *(.ram_d2)
+    KEEP (*(.ram_d2))
   } > RAM_D2
 }
 

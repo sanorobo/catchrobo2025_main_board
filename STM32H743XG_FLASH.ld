@@ -209,7 +209,9 @@ SECTIONS
 
   .ram_d2 :
   {
+    . = ALIGN(32);
     KEEP (*(.ram_d2))
+    . = ALIGN(32);
   } > RAM_D2
 }
 

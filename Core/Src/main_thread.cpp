@@ -1,9 +1,8 @@
 #include <cstdio>
 
 #include <halx/core.hpp>
-#include <halx/peripheral.hpp>
-
 #include <halx/driver/c6x0.hpp>
+#include <halx/peripheral.hpp>
 
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;

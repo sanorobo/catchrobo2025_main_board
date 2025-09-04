@@ -64,6 +64,11 @@ extern "C" void main_thread(void *) {
   Can<&hfdcan1> can1;
   Can<&hfdcan2> can2;
 
+  Gpio sw1{GPIOD, GPIO_PIN_12};
+  Gpio sw2{GPIOD, GPIO_PIN_13};
+  Gpio sw3{GPIOB, GPIO_PIN_4};
+  Gpio sw4{GPIOB, GPIO_PIN_5};
+
   Tim<&htim16> tim16; // 1kHz
   Tim<&htim17> tim17; // 10kHz
 

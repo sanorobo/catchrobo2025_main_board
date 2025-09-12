@@ -33,27 +33,6 @@ __attribute__((section(".ram_d2"))) static uint8_t uart6_rx_buf[512];
 extern "C" void main_thread(void *) {
   using namespace halx::peripheral;
 
-  HAL_UART_DeInit(&huart1);
-  HAL_UART_DeInit(&huart2);
-  HAL_UART_DeInit(&huart3);
-  HAL_UART_DeInit(&huart4);
-  HAL_UART_DeInit(&huart5);
-  HAL_UART_DeInit(&huart6);
-
-  huart1.Init.BaudRate = 115200;
-  huart2.Init.BaudRate = 115200;
-  huart3.Init.BaudRate = 115200;
-  huart4.Init.BaudRate = 115200;
-  huart5.Init.BaudRate = 115200;
-  huart6.Init.BaudRate = 115200;
-
-  HAL_UART_Init(&huart1);
-  HAL_UART_Init(&huart2);
-  HAL_UART_Init(&huart3);
-  HAL_UART_Init(&huart4);
-  HAL_UART_Init(&huart5);
-  HAL_UART_Init(&huart6);
-
   Uart<&huart1, UartTxDma, UartRxDma> uart1{uart1_tx_buf, uart1_rx_buf};
   Uart<&huart2, UartTxDma, UartRxDma> uart2{uart2_tx_buf, uart2_rx_buf};
   Uart<&huart3, UartTxDma, UartRxDma> uart3{uart3_tx_buf, uart3_rx_buf};
@@ -74,7 +53,7 @@ extern "C" void main_thread(void *) {
 
   enable_stdout(uart2);
 
-  // ここより上はbaud rate以外触らない
+  // ここより上は触らない
 
   using namespace halx::driver;
 
